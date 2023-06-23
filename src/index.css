@@ -1,0 +1,913 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap');
+
+/*On créé des variables*/
+:root {
+    --cl-main: #D2483D;
+    --cl-secondary: #000000;
+    --cl-bg: #F3F3F3;
+    --cl-txt: #000000;
+    --cl-txt-light: #FFFFFF;
+
+    --font-1: 'Bebas Neue', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+}
+
+/*On créé des variables*/
+
+/*On définis les propriétés générales*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+}
+
+/*On définis les propriétés générales*/
+
+/*On donne des propriétés à notre conteneur*/
+.container {
+    max-width: 2000px;
+    margin: 0 auto;
+    background-color: var(--cl-bg);
+}
+
+/*On donne des propriétés à notre conteneur*/
+
+/*On s'occupes des élément communs à toutes les pages*/
+
+/*On s'occupe du header*/
+/*On fait notre hamburger*/
+header li:nth-of-type(4) {
+    width: 30px;
+    height: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header li:nth-of-type(4) div {
+    height: 5px;
+    background-color: var(--cl-secondary);
+}
+
+/*On fait notre hamburger*/
+
+/*On mets en forme notre text*/
+header li a {
+    text-decoration: none;
+    font-family: var(--font-1);
+    color: var(--cl-txt);
+}
+
+header li a[href="#"] {
+    text-decoration: underline var(--cl-main) 3px;
+}
+
+/*On affiche pas nos li qui contiennent les liens écris*/
+header li:not(:nth-of-type(4)) {
+    display: none;
+}
+
+/*On affiche pas nos li qui contiennent les liens écris*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+header img {
+    width: 48px;
+    margin-left: 9%;
+}
+
+header>nav {
+    margin-right: 9%;
+}
+
+header>nav ul {
+    height: min-content;
+}
+
+
+/*On s'occupe de l'intérieur du hamburger et de l'ouvrir quand l'utilisateur clique dessus*/
+header .in_burger {
+    display: none;
+    position: absolute;
+    background-color: var(--cl-secondary);
+    width: 100%;
+    left: 0;
+    top: 100px;
+}
+
+header .in_burger a {
+    display: block;
+    width: min-content;
+    margin: 0 auto;
+    color: var(--cl-txt-light);
+    text-decoration: none;
+    font-family: var(--font-1);
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+header .in_burger a:nth-of-type(3) {
+    padding-bottom: 30px;
+}
+
+#hamburger {
+    width: 30px;
+    height: 23px;
+    position: absolute;
+    top: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+#hamburger:checked~nav {
+    display: block;
+}
+
+#hamburger:checked~#burger {
+    display: none;
+}
+
+#hamburger:checked~#cross {
+    display: block; 
+}
+
+#cross img{
+    width: 30px;
+    margin-right: 8%;
+    margin-top: 1%;
+}
+
+/*On s'occupe de l'intérieur du hamburger et de l'ouvrir quand l'utilisateur clique dessus*/
+
+/*On définis des règles en fonction de la taille de l'écran*/
+@media screen and (min-width: 400px) {
+    #hamburger, #cross, .in_burger{
+        display: none;
+    }
+
+    header li:nth-of-type(4) {
+        display: none;
+    }
+
+    header li:not(:nth-of-type(4)) {
+        display: block;
+        margin-left: 15%;
+    }
+
+    header img {
+        width: 10%;
+    }
+
+    header {
+        justify-content: flex-start;
+    }
+
+    header ul {
+        width: 33vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header li a {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (min-width: 700px) {
+    header li a {
+        font-size: 20px
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    header {
+        padding-top: 18px;
+    }
+
+    header li a {
+        font-size: 24px;
+    }
+
+    header img {
+        width: 7%;
+        margin-left: 3.26%;
+    }
+
+    header ul {
+        width: 13.81vw;
+    }
+
+    header nav {
+        width: min-content;
+        margin-left: 2.22%;
+    }
+
+    header li:not(:nth-of-type(4)) {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+    header ul {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    header ul {
+        width: 200px;
+    }
+}
+
+/*On définis des règles en fonction de la taille de l'écran*/
+/*On s'occupe du header*/
+
+/*On s'occupe du bouton CTA*/
+.cta_button {
+    display: block;
+    background-color: var(--cl-secondary);
+    width: 256px;
+    color: var(--cl-txt-light);
+    text-decoration: none;
+    font-family: var(--font-1);
+    font-size: 24px;
+    text-align: center;
+    line-height: 48px;
+}
+
+/*On change de propriétés en fonction de la taille de l'écran*/
+@media screen and (min-width: 800px) {
+    .cta_button {
+        width: 217px;
+        line-height: 56px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .cta_button {
+        width: 75vw;
+    }
+}
+
+/*On change de propriétés en fonction de la taille de l'écran*/
+/*On s'occupe du bouton CTA*/
+
+/*On s'occupe du bandeau CTA*/
+.cta_section {
+    background-color: var(--cl-main);
+    padding-top: 42px;
+    padding-bottom: 42px;
+}
+
+.cta_section h2 {
+    font-family: var(--font-2);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cl-txt-light);
+    text-align: center;
+}
+
+.cta_section .cta_button {
+    margin: 30px auto 0;
+}
+
+/*On change des propriétés en fonction de la taille de l'écran*/
+@media screen and (min-width: 800px) {
+    .cta_section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .cta_section h2 {
+        font-size: 20px;
+    }
+
+    .cta_section .cta_button {
+        margin: 20px auto 0;
+    }
+}
+
+/*On change des propriétés en fonction de la taille de l'écran*/
+/*On s'occupe du bandeau CTA*/
+
+/*On s'occupe du footer*/
+footer {
+    background-color: var(--cl-secondary);
+    padding-top: 74px;
+    padding-bottom: 74px;
+    display: flex;
+    justify-content: center;
+    margin-top: 72px;
+}
+
+footer img {
+    height: 36px;
+}
+
+footer a:nth-of-type(2) {
+    padding-left: 56px;
+    padding-right: 56px;
+}
+
+/*On change des proprétés en fonction de la taille de l'écran*/
+@media screen and (min-width: 800px) {
+    footer {
+        justify-content: flex-end;
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    footer a:nth-of-type(3) {
+        margin-right: 78px;
+    }
+
+}
+
+/*On change des proprétés en fonction de la taille de l'écran*/
+/*On s'occupe du footer*/
+
+/*On s'occupe de titres soulignés*/
+.underline {
+    text-align: center;
+    text-decoration: underline var(--cl-main) 3px;
+    text-underline-offset: 3px;
+    font-family: var(--font-1);
+    font-size: 20px;
+    color: var(--cl-txt);
+}
+
+/*On change des propriétés en fonction de la taille de l'écran*/
+@media screen and (min-width: 800px) {
+    .underline {
+        font-size: 24px;
+    }
+}
+
+/*On change des propriétés en fonction de la taille de l'écran*/
+/*On s'occupe de titres soulignés*/
+
+/*On s'occupe de la section contact*/
+.contact {
+    width: 67.2%;
+    margin: 0 auto;
+}
+
+.contact address {
+    text-align: center;
+    font-family: var(--font-2);
+    font-size: 16px;
+    margin-top: 18px;
+    font-style: normal;
+    color: var(--cl-txt);
+}
+
+.contact address a {
+    text-decoration: none;
+    color: var(--cl-txt);
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1000px) {
+    .contact address {
+        font-size: 20px;
+    }
+}
+
+/*On s'occupe de la section contact*/
+
+/*On s'occupes des élément communs à toutes les pages*/
+
+/*On s'occupe de index.html*/
+
+/*On s'occupe de l'en-tete*/
+.index_head {
+    margin-top: 30px;
+}
+
+.index_head h1 {
+    text-align: center;
+    font-family: var(--font-1);
+    font-size: 40px;
+    color: var(--cl-txt);
+}
+
+.index_head h2 {
+    text-align: center;
+    width: 45%;
+    font-family: var(--font-2);
+    font-weight: 600;
+    color: var(--cl-txt);
+    font-size: 16px;
+    margin: 4px auto 17px;
+}
+
+.index_head h2 strong {
+    color: var(--cl-main);
+}
+
+.index_head .cta_button {
+    margin: 0 auto;
+}
+
+.index_head img {
+    display: block;
+    width: 232px;
+    margin: 72px auto 0;
+}
+
+/*On définis des propriétés en fonction de la taille de l'écran*/
+@media screen and (min-width: 800px) {
+    .index_head {
+        margin-top: 87px;
+    }
+
+    .index_head h1 {
+        font-size: 72px;
+        text-align: left;
+        margin-left: 20.48%;
+    }
+
+    .index_head h2 {
+        font-size: 20px;
+        text-align: left;
+        margin-left: 20.48%;
+    }
+
+    .index_head .cta_button {
+        margin-left: 20.48%;
+        margin-top: 35px;
+    }
+
+    .index_head img {
+        position: absolute;
+        width: 304px;
+        margin: 0 0 0;
+        right: 21.11%;
+        margin-top: -250px;
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1250px) {
+    .index_head img {
+        right: 10%;
+    }
+
+    .index_head h1,
+    .index_head h2,
+    .index_head .cta_button {
+        margin-left: 10%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 849px) {
+    .index_head img {
+        right: 5%;
+        width: 250px;
+    }
+
+    .index_head h1,
+    .index_head h2,
+    .index_head .cta_button {
+        margin-left: 5%;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .index_head img {
+        position: relative;
+
+        margin-left: 1700px;
+    }
+}
+
+/*On définis des propriétés en fonction de la taille de l'écran*/
+/*On s'occupe de l'en-tete*/
+
+/*On s'occupe de la section nos adresses*/
+.places {
+    margin-top: 72px;
+}
+
+.places article img {
+    width: 256px;
+}
+
+.places article {
+    width: min-content;
+    margin: 40px auto 0;
+}
+
+.places article h3 {
+    font-style: normal;
+    font-family: var(--font-2);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--cl-txt);
+    margin-top: 5px;
+}
+
+.places article a {
+    font-style: normal;
+    text-decoration: none;
+    font-family: var(--font-2);
+    font-size: 16px;
+    color: var(--cl-txt);
+}
+
+@media screen and (min-width: 500px) {
+    .places article {
+        display: flex;
+        width: 84%;
+        margin-left: 8%;
+    }
+
+    .places article div {
+        margin-left: 5%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .places article {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+        width: 30%;
+    }
+
+    .places article img {
+        width: 100%;
+    }
+
+    .places>div {
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+
+    .places article div {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .places {
+        margin-top: 250px;
+    }
+
+    .places article {
+        width: 21.18%;
+    }
+
+    .places>div {
+        justify-content: center;
+    }
+
+    .places article:nth-of-type(2) {
+        margin: 40px 110px;
+    }
+
+    .places article h3 {
+        font-size: 20px;
+    }
+
+    .places article a {
+        font-size: 20px;
+    }
+}
+
+/*On s'occupe de la section nos adresses*/
+
+/*On s'occupe du bandeau cta*/
+.cta_section_index {
+    margin-top: 72px;
+}
+
+@media screen and (min-width: 1000px) {
+    .cta_section_index {
+        margin-top: 36px;
+    }
+}
+
+/*On s'occupe du bandeau cta*/
+
+/*On s'occupe de la section skills*/
+.skills {
+    margin: 32px auto 0;
+    width: 68.26%;
+}
+
+.skills p {
+    text-align: center;
+    margin-top: 13px;
+    font-family: var(--font-2);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 1000px) {
+    .skills p {
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .skills {
+        width: 80%;
+    }
+}
+
+/*On s'occupe de la section skills*/
+
+/*On s'occupe de la section réseaux sociaux*/
+.social {
+    margin-top: 32px;
+}
+
+.social div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.social img {
+    width: 252px;
+    display: block;
+}
+
+@media screen and (min-width: 1000px) {
+    .social div {
+        justify-content: space-between;
+        width: 61.38%;
+        margin: 0 auto;
+    }
+
+    .social img{
+        margin-top: 32px;
+    }
+}
+
+@media screen and (max-width: 504px) {
+    .social div {
+        display: block;
+        margin-top: 0;
+    }
+
+    .social div img {
+        margin: 32px auto 0;
+    }
+}
+
+/*On s'occupe de la section réseaux sociaux*/
+
+/*On s'occupe de la section contact*/
+.contact_index {
+    margin-top: 72px;
+}
+
+/*On s'occupe de la section contact*/
+
+/*On s'occupe de index.html*/
+
+/*On s'occupe de menu.html*/
+
+/*On s'occupe du bandeau CTA(aussi pour contact.html)*/
+.cta_section_two {
+    margin-top: 59px;
+}
+
+@media screen and (min-width: 1000px) {
+    .cta_section_two {
+        margin-top: 43px;
+    }
+}
+
+/*On s'occupe du bandeau CTA*/
+
+/*On s'occupe de la section avec le menu*/
+.restaurant_menu {
+    margin-top: 36px;
+}
+
+.restaurant_menu h1 {
+    text-align: center;
+    font-family: var(--font-1);
+    font-size: 40px;
+    color: var(--cl-txt);
+}
+
+.restaurant_menu h2 {
+    display: none;
+}
+
+.restaurant_menu div {
+    background-color: #FFFFFF;
+    margin: 29px auto 0;
+    width: 82%;
+}
+
+.restaurant_menu div img {
+    width: 64px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.restaurant_menu div .underline {
+    margin-top: 15px;
+}
+
+.restaurant_menu div p {
+    text-align: center;
+    font-family: var(--font-2);
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 13px;
+    line-height: 10px;
+}
+
+.restaurant_menu div p:nth-of-type(4) {
+    line-height: 18px;
+}
+
+.restaurant_menu div p span {
+    display: none;
+}
+
+.restaurant_menu div p:nth-of-type(4) {
+    padding-bottom: 19px;
+}
+
+@media screen and (min-width: 1000px) {
+    .restaurant_menu h1 {
+        text-align: left;
+        margin-left: 10.765%;
+        font-size: 72px;
+    }
+
+    .restaurant_menu h2 {
+        display: inline;
+        margin-left: 10.765%;
+        font-family: var(--font-2);
+        font-weight: 400
+    }
+
+    .restaurant_menu h2 strong {
+        color: var(--cl-main);
+    }
+
+    .restaurant_menu div {
+        width: 78.47%;
+    }
+
+    .restaurant_menu div img {
+        width: 129px;
+        padding-top: 63px;
+    }
+
+    .restaurant_menu div .underline {
+        text-underline-offset: 8px;
+        margin-top: 70px;
+        padding-bottom: 20px;
+    }
+
+    .restaurant_menu div p:not(span) {
+        line-height: 50px;
+    }
+
+    .restaurant_menu div p span {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: -10px;
+        font-weight: 400;
+    }
+
+    .restaurant_menu div p {
+        font-size: 16px;
+    }
+
+    .restaurant_menu div p:nth-of-type(4) {
+        line-height: 40px;
+        padding-bottom: 60px;
+    }
+}
+
+/*On s'occupe de la section avec le menu*/
+
+/*On s'occupe de la section de contact (ça serts aussi au contact de contact.html)*/
+.contact_two {
+    margin-top: 80px;
+}
+
+/*On s'occupe de la section de contact*/
+
+/*On s'occupe de menu.html*/
+
+/*On s'occupe de contact.html*/
+.positions {
+    margin-top: 36px;
+    text-align: center;
+}
+
+.positions h1 {
+    font-family: var(--font-1);
+    font-size: 40px;
+    color: var(--cl-txt);
+
+}
+
+.positions img {
+    display: none;
+}
+
+.positions div h2 {
+    font-family: var(--font-2);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--cl-txt);
+    margin-top: 13px;
+}
+
+.positions a {
+    color: var(--cl-txt);
+    text-decoration: none;
+    font-style: normal;
+}
+
+.positions div p {
+    font-style: normal;
+    font-family: var(--font-2);
+    font-size: 16px;
+}
+
+@media screen and (min-width: 1000px) {
+
+    .positions h1,
+    .positions h2,
+    .positions p {
+        text-align: left;
+    }
+
+    .positions h1 {
+        font-size: 72px;
+        margin-left: 9.93%;
+    }
+
+    .positions div h2 {
+        font-size: 24px;
+    }
+
+    .positions div:nth-of-type(1) {
+        margin-top: 6px;
+    }
+
+    .positions div:not(:nth-of-type(1)) {
+        margin-top: 68px;
+    }
+
+    .positions div p {
+        font-size: 24px;
+    }
+
+    .positions img {
+        display: block;
+        float: right;
+        margin-top: -36px;
+        width: 828px;
+    }
+
+    .positions div:nth-of-type(1) {
+        border-left: 3px solid var(--cl-main);
+        padding-left: 0.34%;
+        margin-left: 9.59%;
+    }
+
+    .positions div {
+        margin-left: 9.93%;
+    }
+
+}
+
+@media screen and (min-width: 1150px) and (max-width: 1300px) {
+    .positions img {
+        width: 700px;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1149px) {
+    .positions img {
+        width: 550px;
+    }
+}
+
+/*On s'occupe de contact.html*/
